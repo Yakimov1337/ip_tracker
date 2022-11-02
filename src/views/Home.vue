@@ -14,25 +14,40 @@
             placeholder="Search for any IP address or leave empty to get your ip info"
           />
           <i
-            class="cursor-pointer bg-black text-white px-4 rounded-tr-md rounded-br-md flex items-center fas fa-chevron-right"
+            class="cursor-pointer bg-black text-white px-4 border border-gray-900 rounded-tr-md rounded-br-md flex items-center fas fa-chevron-right"
           ></i>
         </div>
       </div>
       <!-- IP Info -->
-      <IPInfo/>
+      <IPInfo />
     </div>
 
     <!-- Map -->
-    <div id="mapid" class="h-full z-10"></div>
+    <div id="map" class="h-full z-10"></div>
   </div>
 </template>
 
 <script>
 import IPInfo from "@/components/IPInfo.vue";
 import leaflet from "leaflet";
+import { onMounted } from "vue";
+
 export default {
   name: "Home",
   components: { IPInfo },
-  setup() {}
+  setup() {
+      let map;
+      
+      onMounted(() => {
+      map = leaflet.map('map').setView([51.505, -0.09], 13);
+      leaflet
+        .tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          maxZoom: 19,
+          attribution:
+            '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        })
+        .addTo(map);
+    });
+  },
 };
 </script>
