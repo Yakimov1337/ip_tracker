@@ -2,7 +2,7 @@
   <div class="flex flex-col h-screen max-h-screen">
     <!-- Search / Results -->
     <div
-      class="flex justify-center relative bg-hero-pattern bg-cover px-4 pt-8 pb-32"
+      class="flex z-20 justify-center relative bg-hero-pattern bg-cover px-4 pt-8 pb-32"
     >
       <!-- Search Input    -->
       <div class="w-full max-w-screen-sm">
@@ -18,18 +18,21 @@
           ></i>
         </div>
       </div>
-
       <!-- IP Info -->
       <IPInfo/>
     </div>
+
+    <!-- Map -->
+    <div id="mapid" class="h-full z-10"></div>
   </div>
 </template>
 
 <script>
 import IPInfo from "@/components/IPInfo.vue";
-
+import leaflet from "leaflet";
 export default {
   name: "Home",
   components: { IPInfo },
+  setup() {}
 };
 </script>
