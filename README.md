@@ -1,24 +1,7 @@
-# ip_tracker
+# IP Tracker
 
-## Project setup
-```
-npm install
-```
+![IP Tracker](https://ibb.co/Ytw0wvc/image.png)
+# Project Description
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+IP Tracker is a website, where you will find everything you need to detect, track and trace an IP Address using the latest tracking technology.
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
